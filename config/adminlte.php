@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Easy</b>SKELETON',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>Eas</b>y',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,30 +108,17 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'MENU',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
+            'text'        => 'Dashboard',
             'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
+            'icon'        => 'file',            
+        ],       
         [
             'text'    => 'Multilevel',
             'icon'    => 'share',
@@ -170,19 +157,7 @@ return [
                 ],
             ],
         ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],
+        
     ],
 
     /*
