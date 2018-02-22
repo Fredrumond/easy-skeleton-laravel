@@ -16,8 +16,9 @@ $ git clone https://github.com/Fredrumond/easy-skeleton-laravel.git
 
 Para criar o arquivo `.env` siga os seguintes passos:
 
-1 - Va até o diretorio raiz e crie o arquivo `.env`
-2 - Copie e cole o modelo abaixo
+- Va até o diretorio raiz e crie o arquivo `.env`
+- Copie e cole o modelo abaixo
+- Coloque os parametros do seu banco de dados no segundo grupo de informações do `.env` (DB_CONNECTION,DB_HOST,DB_DATABASE,DB_USERNAME e DB_PASSWORD)
 
 ```terminal
 APP_NAME=Laravel
@@ -57,13 +58,23 @@ PUSHER_APP_SECRET=
 PUSHER_APP_CLUSTER=mt1
 
 ```
-### Agora instale os pacotes com o seguinte comando
+### Instalando pacotes
 
 ```terminal
 $ composer install
 ```
+### Rodando migration
 
-### Agora precisamos gerar uma chave para sua aplicação com o seguinte comando
+```terminal
+$ php artisan migrate
+```
+### Rodando seeder
+
+```terminal
+$ php artisan db:seed
+```
+
+### Gerando chave para aplicação
 
 ```terminal
 $ php artisan key:generate
@@ -72,3 +83,7 @@ $ php artisan key:generate
 ```terminal
 $ php artisan serve
 ```
+
+### Usuário para autenticação
+ - email: admin@admin.com
+ - senha: 123456
