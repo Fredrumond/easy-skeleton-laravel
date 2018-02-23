@@ -116,45 +116,30 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',            
+            'url'         => 'admin',
+            'icon'        => 'dashboard',            
         ],       
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Site',
             'icon'    => 'share',
-            'submenu' => [
+            'submenu' => [                
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
+                    'text'    => 'Documentos',
                     'url'     => '#',
+                    'icon'    => 'file',
                     'submenu' => [
                         [
-                            'text' => 'Level Two',
-                            'url'  => '#',
+                            'text' => 'Inserir Documentos',
+                            'url'  => 'admin/documento/inserir',
+                            'icon'    => 'share',
                         ],
                         [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
+                            'text'    => 'Ver documentos',
+                            'url'     => 'admin/documentos',
+                            'icon'    => 'list',                            
                         ],
                     ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
+                ],                
             ],
         ],
         
