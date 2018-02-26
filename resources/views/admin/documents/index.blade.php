@@ -14,6 +14,16 @@
 @section('content')
      <!-- Main content -->
     <section class="content">
+      @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+    @if ($message = Session::get('warning'))   
+        <div class="alert alert-warning">
+            <p>{{ $message }} <a href="{{ route('processo.create') }}" >clique aqui </a></p>
+        </div>
+    @endif
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
