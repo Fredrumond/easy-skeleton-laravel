@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Novo Documento')
+@section('title', 'Editar Documento')
 
 @section('content_header')
-    <h1>Inserir documento</h1>
+    <h1>Editar documento</h1>
 
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.home')}}">Dashboard</a></li>
-      <li><a href="{{ route('admin.documento')}}">Documentos</a></li>
-      <li><a href="{{ route('documento.inserir')}}">Inserir Documento</a></li>
+      <li><a href="{{ route('documentos.index')}}">Documentos</a></li>
+      <li><a href="#">Editar Documento</a></li>
     </ol>
 @stop
 
@@ -27,29 +27,27 @@
 	
 	<div class="box">
 		<div class="box-header">
-			<p>Adicionar documento</p>
+			<h3 class="box-title">{{$documento->name}}</h3>
+            <a href="{{ route('documentos.index') }}" class="btn btn-primary pull-right">Voltar</a>
 		</div>	
 	
 		<div class="panel-body">
 		    <div class="table-container">
-		        <form method="POST" action="{{ route('documento.store')}}"  role="form" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('documentos.update', $documento->id) }}"  role="form" enctype="multipart/form-data">
 		        {{ csrf_field() }}
+		        <input name="_method" type="hidden" value="PATCH">
 		        <div class="row">
 		            <div class="col-xs-6 col-sm-6 col-md-6">
 		                <div class="form-group">
-		                    <input type="text" name="nome" id="nome" class="form-control input-sm" placeholder="Nome" value="{{ old('nome') }}">
+		                    <input type="text" name="nome" id="nome" value="{{$documento->name}}" class="form-control input-sm">
 		                </div>
-		            </div>
-		             <div class="col-xs-6 col-sm-6 col-md-6">
-		                <input type="file" name="arquivo">
-		            </div>
-		            <br>
+		            </div>		             
 		        </div>
 
 		         <div class="row">        
 		            <div class="col-xs-12 col-sm-12 col-md-12">
 		                <input type="submit"  value="Salvar" class="btn btn-success ">
-		                <a href="" class="btn btn-info" >Cancelar</a>
+		                <a href="{{ route('documentos.index') }}" class="btn btn-info" >Cancelar</a>
 		            </div>
 		         </div>
 		        </form>

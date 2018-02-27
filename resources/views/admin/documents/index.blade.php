@@ -6,8 +6,8 @@
     <h1>Documentos</h1>
 
     <ol class="breadcrumb">
-      <li><a href="{{ route('admin.home')}}">Dashboard</a></li>
-      <li><a href="{{ route('admin.documento')}}">Documentos</a></li>
+      <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+      <li><a href="{{ route('documentos.index') }}">Documentos</a></li>
     </ol>
 @stop
 
@@ -18,18 +18,13 @@
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
-    @endif
-    @if ($message = Session::get('warning'))   
-        <div class="alert alert-warning">
-            <p>{{ $message }} <a href="{{ route('processo.create') }}" >clique aqui </a></p>
-        </div>
-    @endif
+    @endif   
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Lista de documentos</h3>
-              <a href="{{ route('documento.inserir')}}" class="btn btn-success pull-right">Adicionar novo documento</a>
+              <a href="{{ route('documentos.create') }}" class="btn btn-success pull-right">Adicionar novo documento</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -49,9 +44,11 @@
                     <td>{{$d->name}}</td>                 
                     <td>{{$d->path}}</td>
                     <td>
-                      <a class="btn btn-info" href="#">Ver</a>
-                      <a class="btn btn-primary" href="#">Editar</a>
-                      <a class="btn btn-danger" href="#">Excluir</a>                      
+                      <a class="btn btn-info" href="{{ route('documentos.show',$d->id) }}">Ver</a>
+                      <a class="btn btn-primary" href="{{ route('documentos.edit',$d->id) }}">Editar</a>
+                      {!! Form::open(['method' => 'DELETE','route' => ['documentos.destroy', $d->id],'style'=>'display:inline']) !!}
+                      {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
+                      {!! Form::close() !!}                     
                     </td> 
                   </tr>
                 @endforeach

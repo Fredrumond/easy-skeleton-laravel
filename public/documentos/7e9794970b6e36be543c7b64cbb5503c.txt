@@ -1,9 +1,0 @@
-npm -g mocha
-
-npm install --save-dev chai
-
-npm i -g istanbul
-
-npm instal --ave-dev mocha (instala local)
-
-istanbul cover node_modules/mocha/bin/_mocha

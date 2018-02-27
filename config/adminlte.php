@@ -130,7 +130,7 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Inserir Documentos',
-                            'url'  => 'admin/documento/inserir',
+                            'url'  => 'admin/documentos/create',
                             'icon'    => 'share',
                         ],
                         [
