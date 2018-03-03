@@ -38,9 +38,9 @@
                     <td>{{$u->id}}</td>
                     <td>{{$u->name}}</td>
                     <td>
-                      <a class="btn btn-info" href="{{ route('documentos.show',$u->id) }}">Ver</a>
-                      <a class="btn btn-primary" href="{{ route('documentos.edit',$u->id) }}">Editar</a>
-                      {!! Form::open(['method' => 'DELETE','route' => ['documentos.destroy', $u->id],'style'=>'display:inline']) !!}
+                      <a class="btn btn-info" href="{{ route('usuarios-grupo.show',$u->id) }}">Ver</a>
+                      <a class="btn btn-primary" href="{{ route('usuarios-grupo.edit',$u->id) }}">Editar</a>
+                      {!! Form::open(['method' => 'DELETE','route' => ['usuarios-grupo.destroy', $u->id],'style'=>'display:inline']) !!}
                       {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
                       {!! Form::close() !!}                     
                     </td> 
@@ -66,7 +66,7 @@
         $('#example2').DataTable({
           'paging'      : true,
           'lengthChange': false,
-          'searching'   : false,
+          'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : false

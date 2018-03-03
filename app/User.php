@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -30,4 +31,6 @@ class User extends Authenticatable
     public function group(){
         return $this->belongsTo('App\Models\UsersGroup','group_id');
     }
+
+    
 }

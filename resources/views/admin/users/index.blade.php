@@ -30,6 +30,7 @@
                   <th>ID</th>
                   <th>Nome</th>
                   <th>Grupo</th>
+                  <th>Data Cadastro</th>
                   <th>Ações</th>                   
                 </tr>
                 </thead>
@@ -39,10 +40,11 @@
                     <td>{{$u->id}}</td>
                     <td>{{$u->name}}</td>
                     <td>{{$u->group->name}}</td>
+                    <td>{{$u->created_at}}</td>
                     <td>
-                      <a class="btn btn-info" href="{{ route('documentos.show',$u->id) }}">Ver</a>
-                      <a class="btn btn-primary" href="{{ route('documentos.edit',$u->id) }}">Editar</a>
-                      {!! Form::open(['method' => 'DELETE','route' => ['documentos.destroy', $u->id],'style'=>'display:inline']) !!}
+                      <a class="btn btn-info" href="{{ route('usuarios.show',$u->id) }}">Ver</a>
+                      <a class="btn btn-primary" href="{{ route('usuarios.edit',$u->id) }}">Editar</a>
+                      {!! Form::open(['method' => 'DELETE','route' => ['usuarios.destroy', $u->id],'style'=>'display:inline']) !!}
                       {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
                       {!! Form::close() !!}                     
                     </td> 
@@ -68,7 +70,7 @@
         $('#example2').DataTable({
           'paging'      : true,
           'lengthChange': false,
-          'searching'   : false,
+          'searching'   : true,
           'ordering'    : true,
           'info'        : true,
           'autoWidth'   : false

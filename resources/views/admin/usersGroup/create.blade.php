@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Novo Usuário')
+@section('title', 'Novo Grupo de Usuário')
 
 @section('content_header')
-    <h1>Inserir usuário</h1>
+    <h1>Inserir grupo de usuário</h1>
 
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.home')}}">Dashboard</a></li>
-      <li><a href="{{ route('usuarios.index')}}">Documentos</a></li>
-      <li><a href="#">Inserir Usuário</a></li>
+      <li><a href="{{ route('usuarios-grupo.index')}}">Grupo de Usuário</a></li>
+      <li><a href="#">Inserir grupo de Usuário</a></li>
     </ol>
 @stop
 
@@ -18,25 +18,26 @@
 	
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title">Adicionar usuário</h3>
+			<h3 class="box-title">Adicionar grupo usuário</h3>
 		</div>	
 	
 		<div class="panel-body">
 		    <div class="table-container">
-		        <form method="POST" action="{{ route('usuarios.store')}}"  role="form" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('usuarios-grupo.store')}}"  role="form" enctype="multipart/form-data">
 		        {{ csrf_field() }}
 		        <div class="row">
 		            <div class="col-xs-6 col-sm-6 col-md-6">
 		                <div class="form-group">
-		                    <input type="text" name="nome" id="nome" class="form-control input-sm" placeholder="Nome" value="{{ old('nome') }}">
-		                </div>
+		                	<label>Nome</label>
+		                    <input type="text" name="name" id="name" class="form-control input-sm" value="{{ old('name') }}">
+		                </div>		                
 		            </div>
 		        </div>
 
 		         <div class="row">        
 		            <div class="col-xs-12 col-sm-12 col-md-12">
 		                <input type="submit"  value="Salvar" class="btn btn-success ">
-		                <a href="{{ route('documentos.index') }}" class="btn btn-info" >Cancelar</a>
+		                <a href="{{ route('usuarios-grupo.index') }}" class="btn btn-info" >Cancelar</a>
 		            </div>
 		         </div>
 		        </form>
