@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Novo Documento')
+@section('title', 'Novo Usuário')
 
 @section('content_header')
-    <h1>Inserir documento</h1>
+    <h1>Inserir usuário</h1>
 
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.home')}}">Dashboard</a></li>
-      <li><a href="{{ route('documentos.index')}}">Documentos</a></li>
-      <li><a href="#">Inserir Documento</a></li>
+      <li><a href="{{ route('usuarios.index')}}">Documentos</a></li>
+      <li><a href="#">Inserir Usuário</a></li>
     </ol>
 @stop
 
@@ -18,12 +18,12 @@
 	
 	<div class="box">
 		<div class="box-header">
-			<h3 class="box-title">Adicionar documento</h3>
+			<h3 class="box-title">Adicionar usuário</h3>
 		</div>	
 	
 		<div class="panel-body">
 		    <div class="table-container">
-		        <form method="POST" action="{{ route('documentos.store')}}"  role="form" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('usuarios.store')}}"  role="form" enctype="multipart/form-data">
 		        {{ csrf_field() }}
 		        <div class="row">
 		            <div class="col-xs-6 col-sm-6 col-md-6">
@@ -32,15 +32,16 @@
 		                </div>
 		            </div>
 		             <div class="col-xs-6 col-sm-6 col-md-6">
-		                <input type="file" name="arquivo">
-		            </div>
-		            <br>
+		             	<div class="form-group">	                      
+	                        {!! Form::select('group_id', $groupOptions, null, ['class'=>'form-control input-sm']) !!}  
+                    	</div>
+                    </div>
 		        </div>
 
 		         <div class="row">        
 		            <div class="col-xs-12 col-sm-12 col-md-12">
 		                <input type="submit"  value="Salvar" class="btn btn-success ">
-		                <a href="{{ route('documentos.index') }}" class="btn btn-info" >Cancelar</a>
+		                <a href="{{ route('usuarios.index') }}" class="btn btn-info" >Cancelar</a>
 		            </div>
 		         </div>
 		        </form>

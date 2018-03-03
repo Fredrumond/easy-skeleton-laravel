@@ -118,7 +118,24 @@ return [
             'text'        => 'Dashboard',
             'url'         => 'admin',
             'icon'        => 'dashboard',            
-        ],       
+        ],
+        [
+            'text'        => 'Usuários Sistema',
+            'url'         => '#',
+            'icon'        => 'user',
+            'submenu' => [                
+                [
+                    'text'    => 'Usuários',
+                    'url'     => 'admin/usuarios',
+                    'icon'    => 'users',                    
+                ],
+                [
+                    'text'    => 'Grupo de usuários',
+                    'url'     => 'admin/usuarios-grupo',
+                    'icon'    => 'lock',                    
+                ],                       
+            ],            
+        ],              
         [
             'text'    => 'Site',
             'icon'    => 'share',

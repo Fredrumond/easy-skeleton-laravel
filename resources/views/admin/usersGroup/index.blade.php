@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Documentos')
+@section('title', 'Grupo de Usuarios')
 
 @section('content_header')
-    <h1>Documentos</h1>
+    <h1>Grupos</h1>
 
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
-      <li><a href="{{ route('documentos.index') }}">Documentos</a></li>
+      <li><a href="{{ route('usuarios-grupo.index') }}">Grupo de usuários</a></li>
     </ol>
 @stop
 
@@ -19,8 +19,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lista de documentos</h3>
-              <a href="{{ route('documentos.create') }}" class="btn btn-success pull-right">Adicionar novo documento</a>
+              <h3 class="box-title">Lista de grupos</h3>
+              <a href="{{ route('usuarios-grupo.create') }}" class="btn btn-success pull-right">Adicionar novo grupo</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -29,20 +29,18 @@
                 <tr>
                   <th>ID</th>
                   <th>Nome</th>
-                  <th>Arquivo</th>
                   <th>Ações</th>                   
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($documentos as $d)
+                @foreach ($usersGroup as $u)
                   <tr>
-                    <td>{{$d->id}}</td>
-                    <td>{{$d->name}}</td>                 
-                    <td>{{$d->path}}</td>
+                    <td>{{$u->id}}</td>
+                    <td>{{$u->name}}</td>
                     <td>
-                      <a class="btn btn-info" href="{{ route('documentos.show',$d->id) }}">Ver</a>
-                      <a class="btn btn-primary" href="{{ route('documentos.edit',$d->id) }}">Editar</a>
-                      {!! Form::open(['method' => 'DELETE','route' => ['documentos.destroy', $d->id],'style'=>'display:inline']) !!}
+                      <a class="btn btn-info" href="{{ route('documentos.show',$u->id) }}">Ver</a>
+                      <a class="btn btn-primary" href="{{ route('documentos.edit',$u->id) }}">Editar</a>
+                      {!! Form::open(['method' => 'DELETE','route' => ['documentos.destroy', $u->id],'style'=>'display:inline']) !!}
                       {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
                       {!! Form::close() !!}                     
                     </td> 

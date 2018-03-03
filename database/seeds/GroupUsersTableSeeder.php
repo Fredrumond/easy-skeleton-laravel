@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
+use App\Models\UsersGroup;
+class GroupUsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	$this->call(GroupUsersTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+        UsersGroup::create([
+        	'name' => 'Administrador'
+        ]);
     }
 }
