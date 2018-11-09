@@ -5,6 +5,7 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 	$this->resource('documentos','DocumentController');
 	$this->resource('usuarios','UserController');
 	$this->resource('usuarios-grupo','UserGroupController');
+	$this->resource('cidades','CitiesController');
 });
 
 
