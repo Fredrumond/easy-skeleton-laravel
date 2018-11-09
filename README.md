@@ -1,6 +1,21 @@
 # Easy Skeleton Laravel
 
-Esqueleto laravel para estudo do framework.
+Este projeto tem a finalidade de usar um esqueleto laravel para facilitar no estudo do framework.
+
+Ate o momento esse projeto tem as seguintes implementações
+
+1. Dashboard
+> - Apenas box fixos
+2. Usuarios do sistema
+> - Usuarios
+> - Grupos de Usuarios
+3. Configurações
+> - Cidades
+4. Site
+> - Documentos
+5. Observações
+> - As cidades foram extraidas de um json do projeto [CidadesGratis](https://github.com/jansenfelipe/cidades-gratis)
+
 
 ## Instruções de uso
 
@@ -16,48 +31,9 @@ $ git clone https://github.com/Fredrumond/easy-skeleton-laravel.git
 
 Para criar o arquivo `.env` siga os seguintes passos:
 
-- Va até o diretorio raiz e crie o arquivo `.env`
-- Copie e cole o modelo abaixo
-- Coloque os parametros do seu banco de dados no segundo grupo de informações do `.env` (DB_CONNECTION,DB_HOST,DB_DATABASE,DB_USERNAME e DB_PASSWORD)
+- Abra seu terminal e use o seguinte comando `cp .env.example .env` e pronto o  `.env` esta criado
+- Abra seu arquivo e coloque os parametros do seu banco de dados no segundo grupo de informações (DB_CONNECTION,DB_HOST,DB_DATABASE,DB_USERNAME e DB_PASSWORD)
 
-```terminal
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_LOG_LEVEL=debug
-APP_URL=http://localhost
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-QUEUE_DRIVER=sync
-
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=mt1
-
-```
 ### Instalando pacotes
 
 ```terminal
