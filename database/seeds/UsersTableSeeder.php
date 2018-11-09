@@ -12,6 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $this->command->info("Insert user ADMINISTRADOR");
         User::create([
         	'name' => 'Administrador',
             'username' => 'admin',
@@ -19,5 +20,6 @@ class UsersTableSeeder extends Seeder
         	'password' => bcrypt('123456'),
             'group_id' => '1',
         ]);
+        $this->command->info("--------------------");
     }
 }

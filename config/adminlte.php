@@ -135,7 +135,19 @@ return [
                     'icon'    => 'lock',                    
                 ],                       
             ],            
-        ],              
+        ],
+        [
+            'text'        => 'Configurações',
+            'url'         => '#',
+            'icon'        => 'gear',
+            'submenu' => [                
+                [
+                    'text'    => 'Cidades',
+                    'url'     => 'admin/cidades',
+                    'icon'    => 'home',                    
+                ]                    
+            ],            
+        ],                        
         [
             'text'    => 'Site',
             'icon'    => 'share',

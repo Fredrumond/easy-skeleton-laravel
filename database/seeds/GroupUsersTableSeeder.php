@@ -11,8 +11,10 @@ class GroupUsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $this->command->info("Insert group ADMINISTRADOR");
         UsersGroup::create([
         	'name' => 'Administrador'
         ]);
+        $this->command->info("--------------------");
     }
 }
